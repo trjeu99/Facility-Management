@@ -8,17 +8,21 @@ namespace Group0.AbpZeroTemplate.Application.Share.Cars.Dto
     /// </summary>
     public class CarDto
     {
-        public int? Id { get; set; }
-        public string CarID { get; set; }
-        public string CarCode { get; set; }
-        public string Name { get; set; }
-        public string Color { get; set; }
-        public string RecordStatus { get; set; }
-        public string MakerId { get; set; }
-        public DateTime? CreateDt { get; set; }
-        public string AuthStatus { get; set; }
-        public string CheckerId { get; set; }
-        public DateTime? ApproveDt { get; set; }
+        public int Ma { get; set; }
+        public string Xe_Ma { get; set; }
+        public string Xe_Ten { get; set; }
+        public int? Xe_LoaiXe { get; set; }
+        public int? Xe_Gia { get; set; }
+        public string Xe_Mau { get; set; }
+        public DateTime? Xe_NgayTao { get; set; }
+        public DateTime? Xe_NgayApprove { get; set; }
+        public string Xe_TrangThai { get; set; }
+        public string Xe_NguoiTao { get; set; }
+        public int? Xe_PhieuDKDuongBo { get; set; }
+        public int? Xe_PhieuDangKiem { get; set; }
+        public int? Xe_BaoHiem { get; set; }
+        public int? Xe_BaoHiemTuNguyen { get; set; }
+
 
     }
 }

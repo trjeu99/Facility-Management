@@ -18,14 +18,6 @@
     <ProjectReference Include="..\GSoft.AbpZeroTemplate.EntityFrameworkCore\GSoft.AbpZeroTemplate.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\GWebsite.AbpZeroTemplate.Web.Core\GWebsite.AbpZeroTemplate.Web.Core.csproj" />
     <ProjectReference Include="..\modules\group0.Demo\Group0.AbpZeroTemplate.Web.Core\Group0.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group1.CarTypesProposal\Group1.AbpZeroTemplate.Web.Core\Group1.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group2.AddCar\Group2.AbpZeroTemplate.Web.Core\Group2.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group3.CarUpdateInfo\Group3.AbpZeroTemplate.Web.Core\Group3.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group4.SearchCar\Group4.AbpZeroTemplate.Web.Core\Group4.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group6.FuelNormsCarTypes\Group6.AbpZeroTemplate.Web.Core\Group6.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group9.MaintenanceNotifyer\Group9.AbpZeroTemplate.Web.Core\Group9.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group11.CarFeeNotifyer\Group11.AbpZeroTemplate.Web.Core\Group11.AbpZeroTemplate.Web.Core.csproj" />
-	  <ProjectReference Include="..\modules\group12.CensorshipCar\Group12.AbpZeroTemplate.Web.Core\Group12.AbpZeroTemplate.Web.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

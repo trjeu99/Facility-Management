@@ -31,14 +31,6 @@
     <ProjectReference Include="..\GSoft.AbpZeroTemplate.EntityFrameworkCore\GSoft.AbpZeroTemplate.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\GWebsite.AbpZeroTemplate.Application\GWebsite.AbpZeroTemplate.Application.csproj" />
     <ProjectReference Include="..\modules\group0.Demo\Group0.AbpZeroTemplate.Application\Group0.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group1.CarTypesProposal\Group1.AbpZeroTemplate.Application\Group1.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group2.AddCar\Group2.AbpZeroTemplate.Application\Group2.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group3.CarUpdateInfo\Group3.AbpZeroTemplate.Application\Group3.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group4.SearchCar\Group4.AbpZeroTemplate.Application\Group4.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group6.FuelNormsCarTypes\Group6.AbpZeroTemplate.Application\Group6.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group9.MaintenanceNotifyer\Group9.AbpZeroTemplate.Application\Group9.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group11.CarFeeNotifyer\Group11.AbpZeroTemplate.Application\Group11.AbpZeroTemplate.Application.csproj" />
-	  <ProjectReference Include="..\modules\group12.CensorshipCar\Group12.AbpZeroTemplate.Application\Group12.AbpZeroTemplate.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

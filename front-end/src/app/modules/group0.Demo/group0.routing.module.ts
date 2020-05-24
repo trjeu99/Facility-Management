@@ -14,14 +14,14 @@ import { CarEditComponent } from "./car/car-edit.component";
                         component: CarListComponent,
                         data: { permission: "Pages.Group0.Car" },
                     },
-                    {
-                        path: "car-add",
-                        component: CarEditComponent,
-                        data: {
-                            permission: "Pages.Group0.Car.Add",
-                            editPageState: "add",
-                        },
-                    },
+                    // {
+                    //     path: "car-add",
+                    //     component: CarEditComponent,
+                    //     data: {
+                    //         permission: "Pages.Group0.Car.Add",
+                    //         editPageState: "add",
+                    //     },
+                    // },
                     {
                         path: "car-edit",
                         component: CarEditComponent,

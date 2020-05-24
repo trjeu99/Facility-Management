@@ -27,7 +27,7 @@ using GSoft.AbpZeroTemplate.Web.Chat.SignalR;
 using GSoft.AbpZeroTemplate.Web.Configuration;
 using GWebsite.AbpZeroTemplate.Web.Core;
 using Group0.AbpZeroTemplate.Web.Core;
-using Group1.AbpZeroTemplate.Web.Core;
+
 namespace GSoft.AbpZeroTemplate.Web
 {
     [DependsOn(
@@ -38,8 +38,7 @@ namespace GSoft.AbpZeroTemplate.Web
         typeof(AbpRedisCacheModule), //AbpRedisCacheModule dependency (and Abp.RedisCache nuget package) can be removed if not using Redis cache
         typeof(AbpHangfireAspNetCoreModule), //AbpHangfireModule dependency (and Abp.Hangfire.AspNetCore nuget package) can be removed if not using Hangfire
         typeof(Group0WebCoreModule),
-        typeof(GWebsiteWebCoreModule),
-        typeof(Group1WebCoreModule)
+        typeof(GWebsiteWebCoreModule)
     )]
     public class AbpZeroTemplateWebCoreModule : AbpModule
     {

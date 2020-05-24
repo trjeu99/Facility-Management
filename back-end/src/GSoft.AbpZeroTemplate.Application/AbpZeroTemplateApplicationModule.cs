@@ -4,7 +4,6 @@ using Abp.Reflection.Extensions;
 using Group0.AbpZeroTemplate.Application;
 using GSoft.AbpZeroTemplate.Authorization;
 using GWebsite.AbpZeroTemplate.Application;
-using Group1.AbpZeroTemplate.Application;
 
 namespace GSoft.AbpZeroTemplate
 {
@@ -14,8 +13,7 @@ namespace GSoft.AbpZeroTemplate
     [DependsOn(
         typeof(AbpZeroTemplateCoreModule),
         typeof(GWebsiteApplicationModule),
-        typeof(Group0ApplicationModule),
-        typeof(Group1ApplicationModule)
+        typeof(Group0ApplicationModule)
         )]
     public class AbpZeroTemplateApplicationModule : AbpModule
     {

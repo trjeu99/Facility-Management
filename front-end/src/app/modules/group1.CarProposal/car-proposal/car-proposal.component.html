@@ -1,0 +1,276 @@
+<div [@routerTransition]>
+  <form class="m-content" #roleForm="ngForm" novalidate (ngSubmit)="save()" autocomplete="off">
+    <div class="m-portlet m-portlet__header m-portlet-mobile">
+      <div class="m-portlet__nav">
+        <ul>
+          <li [attr.disabled]="editPageState == 'view'">
+            <a (click)="save()"><i class="fa fa-save"></i> Lưu</a>
+          </li>
+          <li [attr.disabled]="editPageState != 'view' || carInput.authStatus=='A'">
+            <a (click)="approve()"><i class="fa fa-check"></i> Duyệt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="m-subheader">
+      <div class="d-flex align-items-center">
+        <div class="mr-auto col-xs-6">
+          <span class="m-section__sub m-section__sub--separator">
+            Trang chủ
+          </span>
+          <span class="m-section__sub m-section__sub--separator active">
+            <a routerLink="/app/admin/car">Quản lý xe</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="m-portlet m-portlet-mobile">
+      <div class="m-portlet__body">
+        <div class="m-form m-form--label-align-right">
+          <form class="ng-tns-c10-9 ng-pristine ng-valid ng-touched" autocomplete="off" novalidate=""
+            [formGroup]="carForm">
+            <div class="form-body">
+
+              <!-- #region car-proposal-->
+              <div class="row">
+                <div class="col-sm-1 d-flex align-items-center ">
+                  <span>Model Xe *</span>
+                </div>
+                <div class="col-sm-2">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="modelCar"
+                    [ngClass]="{ 'is-invalid': submitted && f.modelCar.errors }">
+                    <option hidden value="">---Chọn model xe---</option>
+                    <option *ngFor="let modal of listModalCar">{{ modal }}</option>
+                  </select>
+                  <div *ngIf="submitted && f.modelCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.modelCar.errors.required">Chọn model xe</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ma xe -->
+              <div class="row mt-4">
+
+                <div class="col-sm-1 d-flex align-items-center">
+                  <span>Mã Xe *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="text" formControlName="codeCar" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.codeCar.errors }" />
+                  <div *ngIf="submitted && f.codeCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.codeCar.errors.required">Nhập mã xe</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center">
+                  <span>Ngày đăng kiểm *</span></div>
+                <div class="col-sm-3">
+
+                  <p-calendar formControlName="dkDate" name="startAnalyze" dateFormat="dd/mm/yy" showButtonBar="true"
+                    showIcon="true" enabled="true" [inline]="false">
+                  </p-calendar>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center">
+                  <span>Phí đăng kiểm *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="number" formControlName="dkPrice" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.dkPrice.errors }" />
+                  <div *ngIf="submitted && f.dkPrice.errors" class="invalid-feedback">
+                    <div *ngIf="f.dkPrice.errors.required">Nhập phí đăng kiểm</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row mt-4">
+
+                <div class="col-sm-1 d-flex align-items-center">
+                  <span>Tên Xe *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="text" formControlName="nameCar" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.nameCar.errors }" />
+                  <div *ngIf="submitted && f.nameCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.nameCar.errors.required">Nhập tên xe</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center">
+                  <span>Ngày đăng kí đường bộ *</span></div>
+                <div class="col-sm-3">
+
+                  <p-calendar formControlName="dbDate" name="startAnalyze" dateFormat="dd/mm/yy" showButtonBar="true"
+                    showIcon="true" enabled="true" [inline]="false">
+                  </p-calendar>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center">
+                  <span>Phí đường bộ *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="number" formControlName="dbPrice" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.dbPrice.errors }" />
+                  <div *ngIf="submitted && f.dbPrice.errors" class="invalid-feedback">
+                    <div *ngIf="f.dbPrice.errors.required">Nhập phí đường bộ</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row mt-4">
+
+                <div class="col-sm-1 d-flex align-items-center">
+                  <span>Giá Xe *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="number" formControlName="priceCar" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.priceCar.errors }" />
+                  <div *ngIf="submitted && f.priceCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.priceCar.errors.required">Nhập giá xe</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-2">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <span>(Bảo hiểm bắt buộc)</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <span>Ngày đóng phí bảo hiểm *</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+
+                  <p-calendar formControlName="bhDate" name="startAnalyze" dateFormat="dd/mm/yy" showButtonBar="true"
+                    showIcon="true" enabled="true" [inline]="false">
+                  </p-calendar>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center">
+                  <span>Phí bảo hiểm *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="number" formControlName="bhPrice" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.bhPrice.errors }" />
+                  <div *ngIf="submitted && f.bhPrice.errors" class="invalid-feedback">
+                    <div *ngIf="f.bhPrice.errors.required">Nhập phí bảo hiểm</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- type car -->
+              <div class="row mt-4">
+                <div class="col-sm-1 d-flex align-items-center ">
+                  <span>Loại Xe *</span>
+                </div>
+                <div class="col-sm-2">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="typeCar"
+                    [ngClass]="{ 'is-invalid': submitted && f.typeCar.errors }" (change)="getIndexType($event)">
+                    <option hidden value="">---Chọn loại xe---</option>
+                    <option *ngFor="let type of listTypeCar">{{ type }}</option>
+                  </select>
+                  <div *ngIf="submitted && f.typeCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.typeCar.errors.required">Chọn loại xe</div>
+                  </div>
+                </div>
+
+                <div class="col-sm-2">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <span>(Bảo hiểm tình nguyện)</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <span>Đóng phí bảo hiểm</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-2 d-flex align-items-center">
+                  <input type="checkbox" formControlName="blCarCheck" name="blCarCheck">
+                </div>
+              </div>
+
+              <div class="row mt-4">
+
+                <div class="col-sm-1 d-flex align-items-center">
+                  <span>Hãng xe *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="text" formControlName="brandCar" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.brandCar.errors }" />
+                  <div *ngIf="submitted && f.brandCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.brandCar.errors.required">Nhập hãng xe</div>
+                  </div>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center" *ngIf="checBHTN()">
+                  <span>Ngày đóng phí bảo hiểm</span></div>
+                <div class="col-sm-3" *ngIf="checBHTN()">
+
+                  <p-calendar formControlName="bhtnDate" name="startAnalyze" dateFormat="dd/mm/yy" showButtonBar="true"
+                    showIcon="true" enabled="true" [inline]="false">
+                  </p-calendar>
+
+                </div>
+                <div class="col-sm-2 d-flex align-items-center" *ngIf="checBHTN()">
+                  <span>Phí bảo hiểm</span>
+                </div>
+                <div class="col-sm-2" *ngIf="checBHTN()">
+
+                  <input type="number" formControlName="bhtnPrice" class="form-control" />
+
+                </div>
+
+              </div>
+
+              <div class="row mt-4">
+
+                <div class="col-sm-1 d-flex align-items-center">
+                  <span>Màu Xe *</span>
+                </div>
+                <div class="col-sm-2">
+
+                  <input type="text" formControlName="colorCar" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.colorCar.errors }" />
+                  <div *ngIf="submitted && f.colorCar.errors" class="invalid-feedback">
+                    <div *ngIf="f.colorCar.errors.required">Nhập màu xe</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-sm-12">
+
+                  <button class="btn btn-outline-dark" type="button" (click)="add()">Thêm</button>
+                </div>
+              </div>
+
+              <!-- #endregion -->
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

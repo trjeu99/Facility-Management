@@ -22,40 +22,42 @@ namespace Group0.AbpZeroTemplate.Application.Controllers
             this.carAppService = carAppService;
         }
         [HttpPost]
-        public IDictionary<string, object> CAR_Upd([FromBody]CarDto input)
+        public IDictionary<string, object> Xe_Upd([FromBody]CarDto input)
         {
-            return carAppService.CAR_Upd(input);
+            return carAppService.Xe_Upd(input);
         }
         [HttpPost]
-        public IDictionary<string, object> CAR_App(int id, string checkerId)
+        public IDictionary<string, object> XeProposal_App(int ma, string xe_NguoiTao)
         {
-            return carAppService.CAR_App(id, checkerId);
+            return carAppService.XeProposal_App(ma, xe_NguoiTao);
         }
         [HttpPost]
-        public CarDto CAR_ById(int id)
+        public CarDto Xe_ByMa(int ma)
         {
-            return carAppService.CAR_ById(id);
+            return carAppService.Xe_ByMa(ma);
         }
         [HttpPost]
-        public IDictionary<string, object> CAR_Ins([FromBody]CarDto input)
+        public IDictionary<string, object> Xe_Ins([FromBody]CarDto input)
         {
-            return carAppService.CAR_Ins(input);
+            return carAppService.Xe_Ins(input);
         }
-        [HttpPost]
-        public IDictionary<string, object> CAR_Del(int id)
-        {
-            return carAppService.CAR_Del(id);
-        }
-        [HttpPost]
-        public List<CarDto> CAR_Search([FromBody]CarDto input)
-        {
-            return carAppService.CAR_Search(input);
-        }
+       
 
-        [HttpGet]
-        public string GetCurrentUserName()
-        {
-            return carAppService.GetCurrentUserName();
-        }
+        //[HttpPost]
+        //public IDictionary<string, object> CAR_Del(int id)
+        //{
+        //    return carAppService.CAR_Del(id);
+        //}
+        //[HttpPost]
+        //public List<CarDto> CAR_Search([FromBody]CarDto input)
+        //{
+        //    return carAppService.CAR_Search(input);
+        //}
+
+        //[HttpGet]
+        //public string GetCurrentUserName()
+        //{
+        //    return carAppService.GetCurrentUserName();
+        //}
     }
 }

@@ -64,6 +64,7 @@ import { EditUserPermissionsModalComponent } from "./users/edit-user-permissions
 import { ImpersonationService } from "./users/impersonation.service";
 import { UsersComponent } from "./users/users.component";
 import { Group0Module } from "@app/modules/group0.Demo/group0.module";
+import { Group1Module } from "@app/modules/group1.CarProposal/group1.module";
 
 @NgModule({
     imports: [
@@ -84,6 +85,7 @@ import { Group0Module } from "@app/modules/group0.Demo/group0.module";
         EditorModule,
         Group0Module,
         InputMaskModule,
+        Group1Module // chia xong module rồi đó =]z giwof code thôi
     ],
     declarations: [
         UsersComponent,
