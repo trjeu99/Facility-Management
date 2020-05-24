@@ -1,0 +1,140 @@
+<div [@routerTransition]>
+  <div class="m-content">
+    <div class="m-portlet m-portlet__header m-portlet-mobile">
+      <div class="m-portlet__nav">
+        <ul>
+          <li *ngIf="isGranted('Pages.Group0.Car.Add')"><a routerLink="/app/admin/car-add"><i class="flaticon-add"></i>
+              Thêm mới</a></li>
+          <li [attr.disabled]="!currentId" *ngIf="isGranted('Pages.Group0.Car.Update')"><a
+              [routerLink]="['/app/admin/car-edit', {id : currentId}]"><i class="flaticon-edit"></i> Chỉnh sửa</a></li>
+          <li [attr.disabled]="!currentId" *ngIf="isGranted('Pages.Group0.Car.Delete')"><a (click)="delete()"><i
+                class="flaticon-edit"></i> Xóa</a>
+          </li>
+          <li><a (click)="search()"><i class="flaticon-edit"></i> Search</a></li>
+          <li [attr.disabled]="!currentId" *ngIf="isGranted('Pages.Group0.Car.View')"><a
+              [routerLink]="['/app/admin/car-view', {id : currentId}]"><i class="flaticon-visible"></i> Xem chi
+              tiết</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="m-subheader">
+      <div class="d-flex align-items-center">
+        <div class="mr-auto col-xs-6">
+          <span class="m-section__sub m-section__sub--separator">
+            {{l("Trang chủ")}}
+          </span>
+          <span class="m-section__sub m-section__sub--separator active">
+            <a routerLink="/app/admin/car">{{l("Quản lý xe")}} {{currentUserName}}</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <form #filterForm="ngForm" (submit)="search()">
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Tên xe</label>
+            <input class="form-control" name="name" [(ngModel)]="filterInput.name">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Màu</label>
+            <input class="form-control" name="color" [(ngModel)]="filterInput.color">
+          </div>
+        </div>
+
+      </div>
+      <button hidden></button>
+    </form>
+
+    <div class="m-portlet m-portlet-mobile">
+      <div class="m-portlet__body">
+        <!-- <input class="form-control" [(ngModel)]="filterInput.name" name="carName" />
+                <input class="form-control" [(ngModel)]="filterInput.carID" name="carID" />
+                <button class="btn btn-primary" (click)="search()">Search</button> -->
+        <div class="row align-items-center">
+          <!--<Primeng-TurboTable-Start>-->
+          <div class="primeng-datatable-container">
+            <p-table #dataTable [value]="primengTableHelper.records" [paginator]="true"
+              [rows]="primengTableHelper.defaultRecordsCountPerPage"
+              [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage" totalRecords="totalRecords"
+              pageLinks="3">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>
+                    Checkbox
+                  </th>
+                  <th>
+                    STT
+                  </th>
+                  <th pSortableColumn="value">
+                    ID
+                    <p-sortIcon field="value"></p-sortIcon>
+                  </th>
+                  <th>
+                    Mã xe
+                  </th>
+                  <th>
+                    Tên xe
+                  </th>
+                  <th>
+                    Màu
+                  </th>
+                  <th>
+                    Key
+                  </th>
+                  <th>
+                    Trạng thái duyệt
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-record="$implicit">
+                <tr>
+                  <td>
+                    <label class="m-radio" for="Theme_Default-{{record.id}}">
+                      <input id="Theme_Default-{{record.id}}" name="Theme" [(ngModel)]="currentId" value="{{record.id}}"
+                        type="radio">
+                      <span></span>
+                    </label>
+                  </td>
+                  <td>
+                    <span>{{record['no']}}</span>
+                  </td>
+                  <td>
+                    <span>{{record.carID}}</span>
+                  </td>
+                  <td>
+                    <span>{{record.carCode}}</span>
+                  </td>
+                  <td>
+                    <span>{{record.name}}</span>
+                  </td>
+                  <td>
+                    <span>
+                      {{record.color ? record.color : "Chưa có thông tin"}}
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      {{record.recordStatus ? record.recordStatus : "Chưa có thông tin"}}
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      {{record.authStatus == 'A' ? 'Đã duyệt' : 'Chờ duyệt'}}
+                    </span>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          <!--<Primeng-TurboTable-End>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

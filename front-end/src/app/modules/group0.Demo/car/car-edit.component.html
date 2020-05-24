@@ -1,0 +1,77 @@
+<div [@routerTransition]>
+  <form class="m-content" #roleForm="ngForm" novalidate (ngSubmit)="save()" autocomplete="off">
+    <div class="m-portlet m-portlet__header m-portlet-mobile">
+      <div class="m-portlet__nav">
+        <ul>
+          <li [attr.disabled]="editPageState == 'view'">
+            <a (click)="save()"><i class="fa fa-save"></i> Lưu</a>
+          </li>
+          <li [attr.disabled]="editPageState != 'view' || carInput.authStatus=='A'">
+            <a (click)="approve()"><i class="fa fa-check"></i> Duyệt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="m-subheader">
+      <div class="d-flex align-items-center">
+        <div class="mr-auto col-xs-6">
+          <span class="m-section__sub m-section__sub--separator">
+            Trang chủ
+          </span>
+          <span class="m-section__sub m-section__sub--separator active">
+            <a routerLink="/app/admin/car">Quản lý xe</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="m-portlet m-portlet-mobile">
+      <div class="m-portlet__body">
+        <div class="m-form m-form--label-align-right">
+          <form class="ng-tns-c10-9 ng-pristine ng-valid ng-touched" autocomplete="off" novalidate="">
+            <div class="form-body">
+
+              <label *ngIf="carInput.authStatus=='A'" class="approve-label">
+                Đã duyệt
+              </label>
+
+              <div class="row m--margin-bottom-10">
+                <div class="col-xl-6">
+                  <div class="form-group">
+                    <label class="ng-tns-c10-9" for="CarName">Mã xe *</label>
+                    <div class="input-group">
+                      <input class="form-control ng-pristine ng-valid ng-touched" [disabled]="disabledAllInput"
+                        id="carID" name="carID" [(ngModel)]="carInput.carID" type="text" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="ng-tns-c10-9" for="CarName">Code xe *</label>
+                    <div class="input-group">
+                      <input [disabled]="disabledAllInput" class="form-control ng-pristine ng-valid ng-touched"
+                        id="carCode" name="carCode" [(ngModel)]="carInput.carCode" type="text" [disabled]="saving"
+                        required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="ng-tns-c10-9" for="CarName">Tên xe *</label>
+                    <div class="input-group">
+                      <input [disabled]="disabledAllInput" class="form-control ng-pristine ng-valid ng-touched"
+                        id="name" [disabled]="saving" name="name" [(ngModel)]="carInput.name" type="text" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="ng-tns-c10-9" for="CarType">Màu*</label>
+                    <div class="input-group">
+                      <input [disabled]="disabledAllInput" class="form-control ng-pristine ng-valid ng-touched"
+                        id="color" [disabled]="saving" name="color" [(ngModel)]="carInput.color" type="text"
+                        ng-reflect-name="carTypeText" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

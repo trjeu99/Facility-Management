@@ -1,0 +1,62 @@
+<div class="m-content">
+  <div class="m-portlet m-portlet__header m-portlet-mobile">
+    <div class="m-portlet__nav">
+      <ul>
+        <li><span><i class="flaticon-folder-3"></i> Lưu</span></li>
+        <li><span  class="disabled" aria-disabled="true"><i class="flaticon-interface"></i> Duyệt</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="m-subheader">
+    <div class="d-flex align-items-center">
+      <div class="mr-auto col-xs-6">
+        <span class="m-section__sub m-section__sub--separator">
+          {{l("Trang chủ")}}
+        </span>
+        <span class="m-section__sub m-section__sub--separator active">
+          {{l("Quản lý xe")}}
+        </span>
+        <span class="m-section__sub">
+          {{l("Thêm")}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-portlet m-portlet-mobile">
+    <div class="m-portlet__body">
+      <div class="m-form m-form--label-align-right">
+        <form class="ng-tns-c10-9 ng-pristine ng-valid ng-touched" autocomplete="off" novalidate="">
+          <div class="form-body">
+            <div class="row m--margin-bottom-10">
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="ng-tns-c10-9" for="CarName">Tên xe *</label>
+                  <div class="input-group">
+                    <input class="form-control ng-pristine ng-valid ng-touched" id="CarName" name="carName" type="text"
+                      ng-reflect-name="carNameText" ng-reflect-model="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="ng-tns-c10-9" for="CarType">Loại xe *</label>
+                  <div class="input-group">
+                    <input class="form-control ng-pristine ng-valid ng-touched" id="CarType" name="carType" type="text"
+                      ng-reflect-name="carTypeText" ng-reflect-model="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="ng-tns-c10-9" for="Note">Ghi chú</label>
+                  <div class="input-group">
+                    <textarea class="form-control ng-pristine ng-valid ng-touched" id="Note" name="carNameText"
+                      ng-reflect-name="carNameText" ng-reflect-model="">
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

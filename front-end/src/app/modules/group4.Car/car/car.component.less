@@ -1,0 +1,47 @@
+.m-portlet__header {
+    margin-bottom: 0.5rem;
+    .m-portlet__nav {
+        padding: 5px;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+                padding: 5px 10px 2px;
+                margin: 0 5px;
+                transition: all 0.2s ease-in-out;
+                a,
+                span {
+                    text-decoration: none;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-weight: 400;
+                    color: #5867dd;
+                }
+                span:hover {
+                    color: #2739c1;
+                    cursor: pointer;
+                }
+                span.disabled {
+                    pointer-events: none;
+                    color: rgba(63, 64, 71, 0.5);
+                }
+            }
+        }
+    }
+}
+.m-subheader {
+    padding: 10px 0;
+    .m-section__sub--separator {
+        border-right: 1px solid #e2e5ec;
+        padding-right: 15px;
+        margin-right: 15px;
+    }
+    .m-section__sub {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .m-section__sub.active {
+        color: #5867dd;
+        font-weight: bold;
+    }
+}

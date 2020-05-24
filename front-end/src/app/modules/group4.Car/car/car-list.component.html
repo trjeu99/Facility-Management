@@ -1,0 +1,89 @@
+<div [@routerTransition]>
+    <div class="m-content">
+      <div class="m-portlet m-portlet__header m-portlet-mobile">
+        <div class="m-portlet__nav">
+          <ul>
+            <li><a routerLink="/app/gwebsite/car"><i class="flaticon-add"></i> Thêm mới</a></li>
+            <li><a routerLink="/app/gwebsite/car-add"><i class="flaticon-edit"></i> Chỉnh sửa</a></li>
+            <li><a routerLink="/app/gwebsite/car-view"><i class="flaticon-visible"></i> Xem chi tiết</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="m-subheader">
+        <div class="d-flex align-items-center">
+          <div class="mr-auto col-xs-6">
+            <span class="m-section__sub m-section__sub--separator">
+              {{l("Trang chủ")}}
+            </span>
+            <span class="m-section__sub m-section__sub--separator active">
+              {{l("Quản lý xe")}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="m-portlet m-portlet-mobile">
+        <div class="m-portlet__body">
+            <input class="form-control" [(ngModel)]="filterInput.name" name="carName" />
+            <input class="form-control" [(ngModel)]="filterInput.carID" name="carID" />
+            <button class="btn btn-primary" (click)="search()">Search</button>
+
+            <ul>
+              <li *ngFor="let item of records">
+                Ma xe : {{item.carID}}<br>
+                Ten xe : {{item.name}}
+              </li>
+            </ul>
+          <div class="row align-items-center">
+            <!--<Primeng-TurboTable-Start>-->
+            <!-- <div class="primeng-datatable-container" [busyIf]="primengTableHelper.isLoading"> -->
+              <!-- <p-table #dataTable [value]="primengTableHelper.records"
+                rows="{{primengTableHelper.defaultRecordsCountPerPage}}" [paginator]="false" [lazy]="true"
+                [responsive]="primengTableHelper.isResponsive">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th pSortableColumn="value">
+                      {{l('ID')}}
+                      <p-sortIcon field="value"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="date">
+                      {{l('Tên xe')}}
+                      <p-sortIcon field="date"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="info">
+                      {{l('Loại xe')}}
+                      <p-sortIcon field="info"></p-sortIcon>
+                    </th>
+                    <th>{{l('Hành động')}}</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-record="$implicit">
+                  <tr>
+                    <td>
+                      <span class="ui-column-title">{{l('DemoModelValue')}}</span>
+                      <span title="{{record.value}}">{{truncateString(record.value)}}</span>
+                    </td>
+                    <td>
+                      <span class="ui-column-title">{{l('DemoModelDate')}}</span>
+                      <span title="{{record.date}}">{{record.date}}</span>
+                    </td>
+                    <td>
+                      <span class="ui-column-title">{{l('DemoModelInfo')}}</span>
+                      <span title="{{record.displayOrder}}">{{record.info}}</span>
+                    </td>
+                    <td>
+                      <button class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"
+                        title="{{l('Edit')}}">
+                        <i class="fa fa-edit" [attr.aria-label]="l('Edit')"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </ng-template>
+              </p-table> -->
+              <!-- </p-table> -->
+            <!-- </div> -->
+            <!--<Primeng-TurboTable-End>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

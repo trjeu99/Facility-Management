@@ -1,0 +1,62 @@
+REM %1: groupid
+REM %2: name 
+
+SET TEMPLATE=./group0.Demo
+SET ID_GR=%1
+SET ID_FEATURE=%2
+SET PROJ_ID=Group%1
+SET FOLDER_NAME=group%ID_GR%.%ID_FEATURE%
+
+cp %TEMPLATE% -r %FOLDER_NAME%
+
+SET OLD_FOL_APP=%FOLDER_NAME%/Group0.AbpZeroTemplate.Application
+SET NEW_FOL_APP=%FOLDER_NAME%/%PROJ_ID%.AbpZeroTemplate.Application
+mv %OLD_FOL_APP% %NEW_FOL_APP%  
+
+SET OLD_FOL_CORE=%FOLDER_NAME%/Group0.AbpZeroTemplate.Web.Core
+SET NEW_FOL_CORE=%FOLDER_NAME%/%PROJ_ID%.AbpZeroTemplate.Web.Core
+mv %OLD_FOL_CORE% %NEW_FOL_CORE% 
+
+
+SET OLD_FOL_SER=%NEW_FOL_APP%/Services/Cars
+SET NEW_FOL_SER=%NEW_FOL_APP%/Services/%ID_FEATURE%
+mv %OLD_FOL_SER% %NEW_FOL_SER%  
+
+
+SET OLD_FI_APP=%NEW_FOL_SER%/CarAppService.cs
+SET NEW_FI_APP=%NEW_FOL_SER%/%ID_FEATURE%Service.cs
+mv %OLD_FI_APP% %NEW_FI_APP%  
+
+SET OLD_FI_DTO=%NEW_FOL_SER%/Dto/CarDto.cs
+SET NEW_FI_DTO=%NEW_FOL_SER%/Dto/%ID_FEATURE%Dto.cs
+mv %OLD_FI_DTO% %NEW_FI_DTO%  
+
+
+SET OLD_CSPROJ=%NEW_FOL_APP%/Group0.AbpZeroTemplate.Application.csproj
+SET OLD_MODULE=%NEW_FOL_APP%/Group0ApplicationModule.cs
+SET OLD_BASE=%NEW_FOL_APP%/Group0AppServiceBase.cs
+SET OLD_PROVIDER=%NEW_FOL_APP%/Group0AuthorizationProvider.cs
+SET OLD_CONST=%NEW_FOL_APP%/Group0PermissionsConst.cs
+SET NEW_CSPROJ=%NEW_FOL_APP%/%PROJ_ID%.AbpZeroTemplate.Application.csproj
+SET NEW_MODULE=%NEW_FOL_APP%/%PROJ_ID%ApplicationModule.cs
+SET NEW_BASE=%NEW_FOL_APP%/%PROJ_ID%AppServiceBase.cs
+SET NEW_PROVIDER=%NEW_FOL_APP%/%PROJ_ID%AuthorizationProvider.cs
+SET NEW_CONST=%NEW_FOL_APP%/%PROJ_ID%PermissionsConst.cs
+mv  %OLD_CSPROJ% %NEW_CSPROJ%
+mv  %OLD_MODULE% %NEW_MODULE%
+mv  %OLD_BASE% %NEW_BASE%
+mv  %OLD_PROVIDER% %NEW_PROVIDER%
+mv  %OLD_CONST% %NEW_CONST%
+
+
+SET OLD_FI_CORE_CONTROL=%NEW_FOL_CORE%/Controllers/CarController.cs
+SET NEW_FI_CORE_CONTROL=%NEW_FOL_CORE%/Controllers/%ID_FEATURE%Controller.cs
+mv  %OLD_FI_CORE_CONTROL% %NEW_FI_CORE_CONTROL%
+
+
+SET OLD_FI_CORE_CSPROJ=%NEW_FOL_CORE%/Group0.AbpZeroTemplate.Web.Core.csproj
+SET OLD_FI_CORE_MODULE=%NEW_FOL_CORE%/Group0WebCoreModule.cs
+SET NEW_FI_CORE_CSPROJ=%NEW_FOL_CORE%/%PROJ_ID%.AbpZeroTemplate.Web.Core.csproj
+SET NEW_FI_CORE_MODULE=%NEW_FOL_CORE%/%PROJ_ID%WebCoreModule.cs
+mv  %OLD_FI_CORE_CSPROJ% %NEW_FI_CORE_CSPROJ%
+mv  %OLD_FI_CORE_MODULE% %NEW_FI_CORE_MODULE%

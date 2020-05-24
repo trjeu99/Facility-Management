@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props"></Import>
+ 
+  <PropertyGroup>
+    <TargetFrameworks>net461;netcoreapp2.1</TargetFrameworks>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>GSoft.AbpZeroTemplate.Application</AssemblyName>
+    <PackageId>GSoft.AbpZeroTemplate.Application</PackageId>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>GSoft.AbpZeroTemplate</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GSoft.AbpZeroTemplate.Core\GSoft.AbpZeroTemplate.Core.csproj" />
+    <ProjectReference Include="..\GSoft.AbpZeroTemplate.EntityFrameworkCore\GSoft.AbpZeroTemplate.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\GWebsite.AbpZeroTemplate.Application\GWebsite.AbpZeroTemplate.Application.csproj" />
+    <ProjectReference Include="..\modules\group0.Demo\Group0.AbpZeroTemplate.Application\Group0.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group1.CarTypesProposal\Group1.AbpZeroTemplate.Application\Group1.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group2.AddCar\Group2.AbpZeroTemplate.Application\Group2.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group3.CarUpdateInfo\Group3.AbpZeroTemplate.Application\Group3.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group4.SearchCar\Group4.AbpZeroTemplate.Application\Group4.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group6.FuelNormsCarTypes\Group6.AbpZeroTemplate.Application\Group6.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group9.MaintenanceNotifyer\Group9.AbpZeroTemplate.Application\Group9.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group11.CarFeeNotifyer\Group11.AbpZeroTemplate.Application\Group11.AbpZeroTemplate.Application.csproj" />
+	  <ProjectReference Include="..\modules\group12.CensorshipCar\Group12.AbpZeroTemplate.Application\Group12.AbpZeroTemplate.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+
+</Project>
